@@ -3,12 +3,6 @@ export const authorizationLogoPath: string = "/assets/auth/logo.svg";
 export const showPasswordPath: string = "/assets/auth/showPassword.svg";
 export const hidePasswordPath: string = "/assets/auth/hidePassword.svg";
 
-export const enum LocalStorageKeys { //TODO: should be removed. Use utils/browerStorages instead!
-  USER = "user",
-  TOKENS = "Tokens",
-  NEW_ARTIST = "newArtist",
-}
-
 export const enum FormValidationsFieldsIds {
     EMAIL = "email",
     PASSWORD = "password",
