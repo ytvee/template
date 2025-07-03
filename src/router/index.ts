@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import { loadLayoutMiddleware } from "@/router/middleware/loadLayout.middleware";
+import { accessGuardMiddleware } from "@/router/middleware/accessGuard.middleware";
 import { RouteNames } from "@/utils/types/router.types";
 import { AppLayouts } from "@/utils/types/layouts.types";
 import { AccessScopes } from "@/utils/types/auth.types";
@@ -68,7 +69,7 @@ router.beforeResolve((to, from, next) => {
   }
   next();
 });
-// router.beforeEach(accessGuardMiddleware);
+router.beforeEach(accessGuardMiddleware);
 router.beforeEach(loadLayoutMiddleware);
 router.afterEach(() => {
   NProgress.done();
