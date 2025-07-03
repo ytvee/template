@@ -11,9 +11,10 @@
         <div class="profile-image">
           <RoundAvatar :avatar-src="userPictureURI()" />
         </div>
-        <button class="profile-popup-panel-item" @click="goStub">Settings</button>
-        <button class="profile-popup-panel-item" @click="goStub">Connect wallet</button>
-        <button class="profile-popup-panel-item" @click="goStub">Web3Auth</button>
+        <button class="profile-popup-panel-item" @click="goToProfileEditPage">Settings</button>
+        <UserWalletsList />
+        <button class="profile-popup-panel-item" @click="showConnectWalletModal">Connect wallet</button>
+        <button class="profile-popup-panel-item" @click="goToWeb3AuthControlPanel">Web3Auth</button>
         <div v-if="isLoggedIn" class="logout-section">
           <button class="logout-button" @click="logoutHandler()">
             Log out
@@ -28,19 +29,26 @@
 </template>
 
 <script>
+import { markRaw } from "vue";
 import { mapState, mapMutations, mapActions, mapGetters } from "vuex";
 import storeModules from "@/data/store/storeModules.json";
 import userActions from "@/data/store/user/userActions.json";
 import userGetters from "@/data/store/user/userGetters.json";
 import applicationActions from "@/data/store/application/applicationActions.json";
+import routerPaths from "@/data/router/path/routerPaths.json";
 import modalActions from "@/data/store/modal/modalActions.json";
 import userMutations from "@/data/store/user/userMutations.json";
+
 import InformationMessage from "@/components/common/info/informationMessage/InformationMessage.vue";
+
 import RoundAvatar from "../../user/RoundAvatar.vue";
+import ConnectWalletModal from "@/components/structure/modals/wallet/ConnectWalletModal.vue";
+import UserWalletsList from "./profilesection/UserWalletsList.vue";
 
 export default {
   components: {
     RoundAvatar,
+    UserWalletsList,
   },
   data() {
     return {
@@ -55,6 +63,11 @@ export default {
       isLoggedIn: (state) => state.isLoggedIn,
     }),
     ...mapGetters(storeModules.USER, [userGetters.GET_CURRENT_USER_PREVIEW_IMAGE, "isLoggedIn"]),
+    connectWalletModalProps() {
+      return {
+        displayedComponent: markRaw(ConnectWalletModal),
+      };
+    },
   },
   methods: {
     ...mapMutations([userMutations.OPEN_MODAL_CONNECT_WALLET]),
@@ -67,6 +80,10 @@ export default {
     async logoutHandler() {
       await this.signOutUser();
     },
+    openErrorWindow(message) {
+      this[modalActions.SET_MODAL](this.modalErrorProps(message));
+      this[modalActions.SET_MODAL_VISIBILITY](true);
+    },
     modalErrorProps(message) {
       return {
         displayedComponent: InformationMessage,
@@ -75,8 +92,18 @@ export default {
         },
       };
     },
-    goStub() {
-      alert("This is the stub function!")
+    goToProfilePage() {
+      this.$router.push({ path: routerPaths.PROFILE_PAGE });
+    },
+    goToProfileEditPage() {
+      this.$router.push({ path: routerPaths.PROFILE_PAGE_EDIT });
+    },
+    showConnectWalletModal() {
+      this[modalActions.SET_MODAL](this.connectWalletModalProps);
+      this[modalActions.SET_MODAL_VISIBILITY](true);
+    },
+    goToWeb3AuthControlPanel() {
+      this.$router.push({ path: routerPaths.WEB3AUTH });
     },
   },
 };

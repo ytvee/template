@@ -79,7 +79,7 @@ export default {
   },
   computed: {
     ...mapState(AUDIO_EDITOR_SUBMODULES.AI_CHAT, {
-      chatHistory: (state) => state.history,
+      chatHistory: (state) => state.selectedChatHistory,
     }),
   },
   mounted() {

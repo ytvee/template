@@ -66,10 +66,10 @@ export class SocketModule {
     }
     this.socket.onmessage = (event: any) => {
       console.log(event.data);
-      // store.dispatch("notifications/addNotification", JSON.parse(event.data));
+      store.dispatch("notifications/addNotification", JSON.parse(event.data));
     };
     this.socket.onopen = (event: Event) => {
-      // this.sendMessage({ action: "getNotifications" });
+      this.sendMessage({ action: "getNotifications" });
       console.log(event);
     };
     this.socket.onerror = (event: Event) => {

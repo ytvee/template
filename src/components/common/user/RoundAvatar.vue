@@ -1,3 +1,23 @@
+<!--<template>-->
+<!--  <div class="round-avatar" @mouseenter="isAvatarHovered = true" @mouseleave="isAvatarHovered = false">-->
+<!--    <div v-if="isAvatarWithImageAndDisabledForUpload" class="profile-user-image-holder">-->
+<!--      <img :src="avatarSrc" referrerpolicy="no-referrer" crossorigin/>-->
+<!--    </div>-->
+<!--    <div v-else-if="!isEnabledForUploading" class="profile-user-image-holder">-->
+<!--      <svg width="40%" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">-->
+<!--        <path d="M40 0C45.3043 0 50.3914 2.10714 54.1421 5.85786C57.8929 9.60859 60 14.6957 60 20C60 25.3043 57.8929 30.3914 54.1421 34.1421C50.3914 37.8929 45.3043 40 40 40C34.6957 40 29.6086 37.8929 25.8579 34.1421C22.1071 30.3914 20 25.3043 20 20C20 14.6957 22.1071 9.60859 25.8579 5.85786C29.6086 2.10714 34.6957 0 40 0ZM40 50C62.1 50 80 58.95 80 70V80H0V70C0 58.95 17.9 50 40 50Z" fill="#1D2227" />-->
+<!--      </svg>-->
+<!--    </div>-->
+<!--    <CommonFileInput v-if="isCommonFileInputVisible" @event-file="handleAvatarUpload">-->
+<!--      <div class="upload-image-block">-->
+<!--        <svg width="67" height="68" viewBox="0 0 67 68" fill="none" xmlns="http://www.w3.org/2000/svg" :alt="avatarAlt" :title="avatarAlt">-->
+<!--          <path d="M40.2 0H26.8V27.2H0V40.8H26.8V68H40.2V40.8H67V27.2H40.2V0Z" fill="#1D2227" />-->
+<!--        </svg>-->
+<!--      </div>-->
+<!--    </CommonFileInput>-->
+<!--  </div>-->
+<!--</template>-->
+
 <template>
     <label
       class="track-avatar"

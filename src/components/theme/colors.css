@@ -98,10 +98,13 @@
     --ui-alert-text: #F27B7C;
     --ui-fg-light: rgba(255, 255, 255, 0.07);
     --ui-fg-very-light: rgba(255, 255, 255, 0.14);
+    --ui-text-half: rgba(255, 255, 255, 0.4);
+    --ui-text-strong: rgba(255, 255, 255, 0.7);
 
     /* Authorization Backgrounds */
     --gradient-authorization: linear-gradient(to bottom right, #1C1C1C, #2D2D2D);
     --authorization-panel-gradient: linear-gradient(to bottom right, rgba(0,0,0,0.07), rgba(255,255,255,0.07)),
+    --credit-window-gradient: linear-gradient(to bottom right, rgb(62, 62, 62), rgb(99, 95, 95));
 
     /* UI Gradients */
     --gradient-ui-light: linear-gradient(180deg, rgba(255, 255, 255, 0.07) 0%, rgba(255, 255, 255, 0) 100%),

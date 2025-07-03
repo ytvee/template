@@ -2,49 +2,120 @@
   <nav>
     <div class="nav-content">
       <div class="up-container">
-        <div class="logo" @click="goToHome()">
+        <div class="logo" @click.stop="goToLanding()">
           <img :src="logoPath" alt="" />
         </div>
         <div class="nav-buttons-panel">
-          <NavbarItem
-              v-for="(navItem, index) in navItems.pages"
-              :key="index"
-              :isActive="activePage === navItem.route"
-              :iconPath="navItem.iconPath"
-              @click="setActiveTab(navItem.route)"
-          />
+          <NavbarItem v-for="(navItem, index) in navItems.pages" :key="index" :isActive="activePage === navItem.route"
+            :iconPath="navItem.iconPath" @click.stop="setActiveTab(navItem.route)" />
         </div>
       </div>
       <div class="down-container">
         <div class="nav-buttons-panel">
-          <NavbarItem v-for="(navItem, index) in navItems.buttons" :key="index" :isActive="false" :iconPath="navItem.iconPath" @click="openUrl(navItem.name)" />
+          <NavbarItem v-for="(navItem, index) in navItems.buttons" :key="index" :isActive="false"
+            :iconPath="navItem.iconPath" @click.stop="navItem.action" />
         </div>
         <ProfileSection />
       </div>
+      <CreditWindow v-if="isCreditWindowOpen" :onClose="closeCreditWindow"/>
     </div>
   </nav>
 </template>
 
 <script>
-import ProfileSection from "./ProfileSection.vue";
 import NavbarItem from "./NavbarItem.vue";
-import navbarItemsData from "@/data/navbar/navigationItems.json";
-import routerPaths from "@/data/router/path/routerPaths.json";
+import SearchArea from "./SearchArea.vue";
+import ProfileSection from "./ProfileSection.vue";
+import CreditWindow from "../windows/CreditWindow.vue";
 import storeModules from "@/data/store/storeModules.json";
-import { mapActions, mapState } from "vuex";
+import routerPaths from "@/data/router/path/routerPaths.json";
+import AuthorizationService from '@/services/authorizationService';
+import UserNotifications from "./notification/UserNotifications.vue";
+// import navbarItemsData from "@/data/navbar/navigationItems.json";
+import { pagesNavigationData } from "@/utils/constants/constants";
 import { logoPath } from "@/utils/constants/constants";
+import { mapActions, mapState, mapMutations } from "vuex";
 
 export default {
   components: {
     ProfileSection,
+    SearchArea,
     NavbarItem,
+    UserNotifications,
+    CreditWindow
   },
   data() {
     return {
       logoPath,
-      navItems: navbarItemsData,
+      navItems: {
+        pages: pagesNavigationData,
+        buttons: [],
+      },
+      isCreditWindowOpen: false,
+      isSettingsOpen: false,
       // activePage: "aichat",
     };
+  },
+  methods: {
+    ...mapMutations(storeModules.USER, ["resetSession"]),
+    ...mapActions(storeModules.APPLICATION, ["setIsLoading", "setActivePage"]),
+    goToLanding() {
+      this.$router.push({ path: routerPaths.ARTISTS });
+    },
+    resetSocket() {
+      this.$notificationsSocket.stop();
+    },
+    setActiveTab(tabName) {
+      this.setActivePage(tabName);
+      this.$router.push({ path: routerPaths[tabName] });
+    },
+    // openUrl(tabName) {
+    //   console.log(`open ${tabName}`);
+    // },
+    toggleCreditWindow() {
+      this.isCreditWindowOpen = !this.isCreditWindowOpen;
+    },
+    toggleSettings() {
+      this.isSettingsOpen = !this.isSettingsOpen;
+
+      console.log("You change isSettingsOpen: ", this.isSettingsOpen);
+    },
+    async handleLogout() {
+      try {
+        await this.setIsLoading(true);
+
+        await AuthorizationService.signOut();
+
+        this.resetSession();
+        this.$router.push({ path: routerPaths.NEW_AUTHORIZATION });
+      } catch (error) {
+        console.error("SignOut error: ", error.message);
+      } finally {
+        await this.setIsLoading(false);
+      }
+    },
+    closeCreditWindow() {
+      this.isCreditWindowOpen = !this.isCreditWindowOpen;
+    },
+  },
+  created() {
+    this.navItems.buttons = [
+      {
+        name: "logout",
+        iconPath: "/assets/navbar/logout.svg",
+        action: this.handleLogout,
+      },
+      {
+        name: "circle",
+        iconPath: "/assets/navbar/circle.svg",
+        action: this.toggleCreditWindow,
+      },
+      {
+        name: "settings",
+        iconPath: "/assets/navbar/settings.svg",
+        action: this.toggleSettings,
+      }
+    ];
   },
   computed: {
     ...mapState(storeModules.USER, {
@@ -57,23 +128,6 @@ export default {
         return state.activePage;
       },
     }),
-  },
-  methods: {
-    ...mapActions(storeModules.APPLICATION, ["setActivePage"]),
-
-    goToHome() {
-      this.$router.push({ path: routerPaths.HOME });
-    },
-    resetSocket() {
-      this.$notificationsSocket.stop();
-    },
-    setActiveTab(tabName) {
-      this.setActivePage(tabName);
-      // this.$router.push({ path: routerPaths[tabName] });
-    },
-    openUrl(tabName) {
-      console.log(`open ${tabName}`);
-    },
   },
 };
 </script>
@@ -165,6 +219,7 @@ nav .nav-content {
   box-sizing: border-box;
   border-radius: 28px;
 }
+
 /* .search-item{
   margin-right: auto;
   flex: auto;

@@ -61,6 +61,7 @@ export default {
     outline: none;
     font-size: 13px;
     background: none;
+    padding: 0;
 }
 
 .inline-action:hover {
@@ -96,6 +97,11 @@ export default {
 }
 
 .inline-action:hover .label {
+    -webkit-text-fill-color: var(--ui-accent-hover-bg, #43d2e5);
+    color: var(--ui-accent-hover-bg, #43d2e5);
+}
+
+.inline-action:focus .label {
     -webkit-text-fill-color: var(--ui-accent-hover-bg, #43d2e5);
     color: var(--ui-accent-hover-bg, #43d2e5);
 }

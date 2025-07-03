@@ -17,17 +17,17 @@ export default {
   props: {
     isActive: {
       type: Boolean,
-      required: true,
+      required: false,
       default: false,
     },
     label: {
       type: String,
-      required: true,
+      required: false,
       default: "",
     },
     iconPath: {
       type: String,
-      required: true,
+      required: false,
       default: "",
     },
   },

@@ -62,10 +62,10 @@
     --switch-panel-background-color: rgb(42, 46, 42);
 
     --chat-background-gradient: linear-gradient(0deg, #373737, #373737),
-    linear-gradient(0deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.07)),
-    linear-gradient(180.47deg, rgba(251, 251, 251, 0.03) 1.1%, rgba(255, 255, 255, 0) 77.2%),
-    linear-gradient(165.99deg, rgba(82, 187, 77, 0.06) 3.84%, rgba(82, 187, 77, 0) 69.97%),
-    linear-gradient(180deg, #373C36 0%, #2E2E2E 100%);
+        linear-gradient(0deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.07)),
+        linear-gradient(180.47deg, rgba(251, 251, 251, 0.03) 1.1%, rgba(255, 255, 255, 0) 77.2%),
+        linear-gradient(165.99deg, rgba(82, 187, 77, 0.06) 3.84%, rgba(82, 187, 77, 0) 69.97%),
+        linear-gradient(180deg, #373C36 0%, #2E2E2E 100%);
     --chat-header-background-color: rgba(217, 217, 217, 0.102);
     --chat-attached-files-background-color: rgba(42, 46, 42, 1);
     /* todo: rename valiables */
@@ -86,4 +86,8 @@
     --chat-font-size-text: 14px;
     --chat-font-weight-text: 400;
     --chat-font-weight-text-2: 600;
+
+    /* Shadows */
+
+    --modal-shadow: 0px 2px 2px rgba(0, 0, 0, 0.10), 0px 4px 4px rgba(0, 0, 0, 0.11), 0px 10px 19px rgba(0, 0, 0, 0.20);
 }

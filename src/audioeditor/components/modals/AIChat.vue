@@ -40,8 +40,8 @@ export default {
   computed: {
     ...mapGetters(AUDIO_EDITOR_SUBMODULES.AI_CHAT, ["textOfLastMessageInHistory"]),
     ...mapState(AUDIO_EDITOR_SUBMODULES.AI_CHAT, {
-      chatHistory: (state) => state.history,
-      chatHistoryLength: (state) => state.history?.length || 0,
+      chatHistory: (state) => state.selectedChatHistory,
+      chatHistoryLength: (state) => state.selectedChatHistory?.length || 0,
     }),
   },
   watch: {

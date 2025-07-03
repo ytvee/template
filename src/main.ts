@@ -13,6 +13,7 @@ import loggerPlugin from "./plugins/logger/loggerPlugin";
 import notificationsPlugin from "./plugins/notifications/notificationsPlugin";
 import loggerNotificationsPlugin from "./plugins/loggerNotifications/loggerNotificationsPlugin";
 
+// import { initializeAmplify } from "./utils/cognito/cognitoUtils";
 
 import "@/services/amplifyConfig";
 

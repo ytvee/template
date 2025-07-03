@@ -9,9 +9,6 @@
     "build": "npm run build:customized-tone && npm run build:jam-galaxy",
     "lint": "vue-cli-service lint"
   },
-  "engines": {
-    "node": ">=20"
-  },
   "dependencies": {
     "@emurgo/cardano-serialization-lib-asmjs": "^11.5.0",
     "@web3auth/base": "^8.4.1",
@@ -48,22 +45,6 @@
     "wavesurfer.js": "^7.6.5",
     "web3": "^4.8.0"
   },
-  "overrides": {
-    "consolidate": "1.0.4",
-    "rimraf": "^6.0.1",
-    "glob": "^9.3.5",
-    "cross-spawn": "7.0.5",
-    "@npmcli/move-file": "^2.0.1",
-    "inflight": "1.0.6",
-    "@walletconnect/types": "^2.0.0",
-    "@humanwhocodes/config-array": "^0.13.0",
-    "stable": "^0.1.8",
-    "abab": "^2.0.6",
-    "domexception": "^2.0.2",
-    "yaeti": "^1.0.3",
-    "webpack-chain": "6.5.1",
-    "eslint": "^8.41.0"
-  },
   "devDependencies": {
     "@babel/core": "^7.12.16",
     "@babel/eslint-parser": "^7.12.16",
@@ -84,13 +65,15 @@
     "babel-eslint": "^10.1.0",
     "browserify-zlib": "^0.2.0",
     "crypto-browserify": "^3.12.0",
-    "eslint": "^8.41.0",
-    "eslint-config-prettier": "^10.1.5",
-    "eslint-plugin-prettier": "^5.5.1",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-vue": "^8.7.1",
     "file-loader": "^6.2.0",
     "https-browserify": "^1.0.0",
+    "node-sass": "^9.0.0",
     "os-browserify": "^0.3.0",
-    "prettier": "^3.6.2",
+    "prettier": "^2.8.8",
     "process": "^0.11.10",
     "sass": "^1.70.0",
     "sass-loader": "^14.1.0",

@@ -35,7 +35,7 @@ export default {
   computed: {
     ...mapGetters(AUDIO_EDITOR_SUBMODULES.AI_CHAT, ["isLastMessageFromAi"]),
     ...mapState(AUDIO_EDITOR_SUBMODULES.AI_CHAT, {
-      chatHistory: (state) => state.history,
+      chatHistory: (state) => state.selectedChatHistory,
     }),
   },
 };

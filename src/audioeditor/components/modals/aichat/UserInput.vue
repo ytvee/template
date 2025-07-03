@@ -1,6 +1,7 @@
 <template>
-  <div class="ai-chat-input-wrapper" :class="{ started: isChatActivated }">
-    <HelloUserContainer v-if="!isChatActivated" :isFullPage="isFullPage" />
+  <div class="ai-chat-input-wrapper" :class="{ started: isChatActive }">
+    <HelloUserContainer v-if="!isChatActive && !selectedProjectId" :isFullPage="isFullPage" />
+    <ProjectTitleContainer v-if="selectedProjectData" :isFullPage="isFullPage" :projectTitle="selectedProjectData.title"/>
 
     <div class="user-input">
       <SupportButtons
@@ -160,7 +161,7 @@
           </div>
           <transition name="fade">
             <div
-              v-if="!isChatActivated && isFullPage && inputMessage"
+              v-if="!isChatActive && isFullPage && inputMessage"
               class="user-input-tips-container"
             >
               <UserInputTips
@@ -183,6 +184,7 @@ import DefaultInputSelect from "@audioeditor/components/modals/aichat/defaultinp
 import SwitchPanel from "@audioeditor/components/modals/aichat/switch/SwitchPanel.vue";
 import LargeInputSelect from "@audioeditor/components/modals/aichat/largeinputselect/LargeInputSelect.vue";
 import UserInputTips from "@audioeditor/components/modals/aichat/userinputtips/UserInputTips.vue";
+import ProjectTitleContainer from './projecttitlecontainer/ProjectTitleContainer.vue';
 import { DialogTemplateNames } from "@/data/modal/constants";
 import aiChatOptions from "@/data/aichat/aiChatOptions.json";
 import instrumentsButtons from "@/data/store/modal/instrumentsButtons.json";
@@ -191,6 +193,7 @@ import audioWav from "../../../../assets/audio/mixkit-ocean-game-movement-water-
 import audioMp3 from "../../../../assets/audio/Sami Yusuf - Al-Mu'allim.mp3";
 import DefaultTooltip from "@/components/common/tooltip/DefaultTooltip.vue";
 import { generateNoteSamples } from "@/plugins/api/instance/instance";
+import { completeInflightFlowAndGetTokensFromAmplify } from "@/utils/cognito/cognitoUtils";
 
 const { AUDIO_EDITOR_SUBMODULES } = require("@/audioeditor/data/store/storeModules");
 
@@ -199,6 +202,7 @@ export default {
   components: {
     DefaultTooltip,
     HelloUserContainer,
+    ProjectTitleContainer,
     SupportButtons,
     UserInputTips,
     DefaultInputSelect,
@@ -207,8 +211,16 @@ export default {
   },
   computed: {
     ...mapState(AUDIO_EDITOR_SUBMODULES.AI_CHAT, {
-      chatHistory: (state) => state.history,
+      chatHistory: (state) => state.selectedChatHistory,
+      selectedProjectId: (state) => state.selectedProjectId,
     }),
+    selectedProjectData() {
+      if (!this.selectedProjectId) {
+        return null;
+      };
+
+      return this.$store.getters[`${AUDIO_EDITOR_SUBMODULES.AI_CHAT}/getChatProjectById`](this.selectedProjectId);
+    }
   },
   props: {
     isChatActive: { type: Boolean, required: true },
@@ -218,7 +230,6 @@ export default {
   data() {
     return {
       chatOptions: aiChatOptions,
-      isChatActivated: this.isChatActive,
       isUploadTooltipShowed: false,
       hoveredButton: "",
       messageTagColor: "",
@@ -337,7 +348,11 @@ export default {
       ) {
         return;
       }
-      this.isChatActivated = true;
+      // const tokensFromAmplify = completeInflightFlowAndGetTokensFromAmplify();
+      // if (!tokensFromAmplify.accessToken) {
+      //   alert("Please sign in first!");
+      //   return;
+      // }
       const nextMessageIndex =
         this.chatHistory.length > 0
           ? this.chatHistory[this.chatHistory.length - 1].messageId + 1
@@ -507,11 +522,11 @@ export default {
   display: flex;
   flex-direction: column;
   gap: 24px;
+  transition: bottom 0.5s ease-out;
 }
 
 .ai-chat-input-wrapper.started {
   bottom: 0;
-  transition: bottom 0.5s ease-out;
 }
 
 .user-input {

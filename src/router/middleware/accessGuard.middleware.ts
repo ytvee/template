@@ -1,41 +1,41 @@
 import store from "@/store/store";
-import { RouteNames } from "@/utils/types/router.types";
-import { AccessScopes } from "@/utils/types/auth.types";
+import storeModules from "@/data/store/storeModules.json";
+import routerPaths from "@/data/router/path/routerPaths.json";
+import AuthorizationService from "@/services/authorizationService";
 import type { RouteLocationNormalized } from "vue-router";
-import modalPlugin from "@/data/plugins/modal/modalPlugin.json";
+import { RouteNames } from "@/utils/types/router.types";
 
-const authOnlyPages = [RouteNames.LOGIN, RouteNames.SIGN_UP];
+const accessGuardMiddleware = async (to: RouteLocationNormalized) => {
+  console.log("accessGuardMiddleware window.location=", window.location, "to=", to);
 
-function isTryingToAccessUnathorized(to: RouteLocationNormalized, isLoggedIn: boolean) {
-  const { accessScopes } = to.meta;
-  if (!accessScopes) return;
-  return accessScopes.includes(AccessScopes.LOGGED_IN) && !isLoggedIn;
-}
+  const isLoggedIn: boolean = store.getters[`${storeModules.USER}/isLoggedIn`];
 
-function isTryingToAccessLoginAuthorized(to: RouteLocationNormalized, isLoggedIn: boolean) {
-  const { name } = to;
-  const isPageNameEqual = (pageName: string) => {
-    return pageName === name;
-  };
-  return authOnlyPages.some(isPageNameEqual) && isLoggedIn;
-}
+  if (isLoggedIn || to.path === routerPaths.NEW_AUTHORIZATION) {
+    await store.dispatch(`${storeModules.APPLICATION}/setActivePage`, to.name);
 
-// export async function accessGuardMiddleware(to: RouteLocationNormalized) {
-//   //INFO: we prevent to trigger Amlify end of auth flow when we call the oidc provider (our OIDC wrapper) on the same domain as our application.
-//   console.log("accessGuardMiddleware window.location=", window.location, "to=", to);
-//   const isLoggedIn = Boolean((await completeInflightFlowAndGetTokensFromAmplify()).idToken);
-//   // const isLoggedIn = store.getters["user/isLoggedIn"];
+    return;
+  }
 
-//   // const isLoggedIn = false;
+  try {
+    await store.dispatch(`${storeModules.APPLICATION}/setIsLoading`, true);
 
-//   store.dispatch(modalPlugin.MODAL_SET_MODAL_VISIBILITY, false);
+    const authSession = await AuthorizationService.getCurrentAuthSession();
 
-//   if (isTryingToAccessUnathorized(to, isLoggedIn)) {
-//     return { name: RouteNames.LOGIN };
-//   }
-//   if (isTryingToAccessLoginAuthorized(to, isLoggedIn)) {
-//     return { name: RouteNames.ARTISTS };
-//   }
+    await store.dispatch(`${storeModules.APPLICATION}/setActivePage`, to.name);
+    store.commit(`${storeModules.USER}/updateUserSession`, authSession);
+  } catch (error: any) {
+    console.error(error.message);
 
-//   return;
-// }
+    store.commit(`${storeModules.USER}/resetSession`);
+
+    await store.dispatch(`${storeModules.APPLICATION}/setActivePage`, RouteNames.NEW_AUTHORIZATION);
+
+    return {
+      name: RouteNames.NEW_AUTHORIZATION,
+    };
+  } finally {
+    await store.dispatch(`${storeModules.APPLICATION}/setIsLoading`, false);
+  }
+};
+
+export default accessGuardMiddleware;

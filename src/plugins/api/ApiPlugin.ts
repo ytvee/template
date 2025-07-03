@@ -1,6 +1,13 @@
 import type { App } from "vue";
 import { APIInstance } from "./instance/instance";
+import artistModule from "./modules/artist/artistModule";
+import authModule from "./modules/auth/authModule";
+import jgoidcModule from "./modules/jgoidc/jgoidcModule";
+import userModule from "./modules/user/userModule";
+import forumModule from "./modules/forum/forumModule";
 import studioModule from "./modules/studio/studioModule";
+import walletModule from "./modules/wallet/walletModule";
+import testModule from "./modules/test/testModule";
 import type { APIModule, APIModuleIdentifier } from "@/utils/types/api.types";
 import { AxiosRequestConfig } from "axios";
 
@@ -13,7 +20,14 @@ const instanceConfiguration: AxiosRequestConfig = {
 };
 
 const apiModules: Record<APIModuleIdentifier, APIModule> = {
+  auth: { auth: authModule },
+  jgoidc: { jgoidc: jgoidcModule },
+  user: { user: userModule },
+  artist: { artist: artistModule },
+  test: { test: testModule },
+  forum: { forum: forumModule },
   studio: { studio: studioModule },
+  wallet: { wallet: walletModule },
 };
 
 export class ApiPlugin extends APIInstance {
