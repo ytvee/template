@@ -1,7 +1,0 @@
-:global(:root) {
-    /* ==================== */
-    /* TRANSITIONS */
-    /* ==================== */
-
-    --default-transition: 0.25s;
-}

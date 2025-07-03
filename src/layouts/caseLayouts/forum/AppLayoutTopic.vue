@@ -1,11 +1,9 @@
 <script setup lang="ts">
 import NavBar from "@/components/common/navigation/navbar/NavBar.vue";
-import CustomizationProvider from "@/components/theme/CustomizationProvider.vue";
 import ModalWindowVue from "@/components/common/modal/ModalWindow.vue";
 </script>
 
 <template>
-<!--  <CustomizationProvider />-->
   <Teleport to="#content">
     <NavBar />
   </Teleport>
