@@ -193,7 +193,6 @@ import audioWav from "../../../../assets/audio/mixkit-ocean-game-movement-water-
 import audioMp3 from "../../../../assets/audio/Sami Yusuf - Al-Mu'allim.mp3";
 import DefaultTooltip from "@/components/common/tooltip/DefaultTooltip.vue";
 import { generateNoteSamples } from "@/plugins/api/instance/instance";
-import { completeInflightFlowAndGetTokensFromAmplify } from "@/utils/cognito/cognitoUtils";
 
 const { AUDIO_EDITOR_SUBMODULES } = require("@/audioeditor/data/store/storeModules");
 

@@ -18,7 +18,44 @@
           </div>
         </div>
 
-        <PasswordWithRePassword :email-value="modalProps.email" @password-validated="passwordValidatedHandler" />
+        <div
+          class="field-with-validation"
+          :class="{ errored: password.isAccessed && !password.value }"
+        >
+          <label for="new-password"> New password </label>
+          <input
+            id="new-password"
+            v-model="password.value"
+            type="password"
+            placeholder="Enter new password"
+            @blur="password.isAccessed = true"
+            @input="password.isAccessed = true"
+          />
+          <div v-show="password.isAccessed" class="input-errors-holder">
+            <span v-if="!password.value" class="error-message"
+              >Please enter your password</span
+            >
+          </div>
+        </div>
+        <div
+          class="field-with-validation"
+          :class="{ errored: rePassword.isAccessed && password.value !== rePassword.value }"
+        >
+          <label for="re-password"> Confirm password </label>
+          <input
+            id="re-password"
+            v-model="rePassword.value"
+            type="password"
+            placeholder="Confirm password"
+            @blur="rePassword.isAccessed = true"
+            @input="rePassword.isAccessed = true"
+          />
+          <div v-show="rePassword.isAccessed" class="input-errors-holder">
+            <span v-if="password.value !== rePassword.value" class="error-message"
+              >Passwords do not match</span
+            >
+          </div>
+        </div>
       </div>
       <div class="buttons-holder">
         <button :disabled="!isFormContentValid" class="large" @click.prevent="confirmNewPassword">Confirm new password</button>
@@ -30,7 +67,6 @@
 <script>
 import { confirmResetPassword } from "aws-amplify/auth";
 import CloseModalButton from "@/components/common/navigation/buttons/CloseModalButton.vue";
-import PasswordWithRePassword from "../../auth/signupwithpasswordform/PasswordWithRePassword.vue";
 import { DialogTemplateNames } from "@/data/modal/constants";
 import { cognitoMessages } from "@/data/cognito/constants";
 
@@ -41,7 +77,6 @@ export default {
   name: "FillUserNameModal",
   components: {
     CloseModalButton,
-    PasswordWithRePassword,
   },
   props: {
     modalProps: {
@@ -57,8 +92,12 @@ export default {
         isAccessed: false,
       },
       password: {
-        isValid: false,
         value: "",
+        isAccessed: false,
+      },
+      rePassword: {
+        value: "",
+        isAccessed: false,
       },
     };
   },
@@ -71,14 +110,14 @@ export default {
       return resetPasswordConfirmationCodeErrorsArray;
     },
     isFormContentValid() {
-      return this.resetPasswordConfirmationCode.value && this.password.isValid;
+      return (
+        this.resetPasswordConfirmationCode.value &&
+        this.password.value &&
+        this.password.value === this.rePassword.value
+      );
     },
   },
   methods: {
-    passwordValidatedHandler({ isPasswordValid, password }) {
-      this.password.isValid = isPasswordValid;
-      this.password.value = password;
-    },
     async confirmNewPassword() {
       await this.$load(async () => {
         await confirmResetPassword({
