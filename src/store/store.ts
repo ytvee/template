@@ -1,5 +1,4 @@
 import { ActionContext, createStore } from "vuex";
-// import VuexPersistence from "vuex-persist";
 import storeModules from "@/data/store/storeModules.json";
 import userModule, { UserState } from "./modules/user/userModule";
 import applicationModule, { ApplicationState } from "./modules/application/applicationModule";
@@ -12,7 +11,6 @@ import _ from "lodash";
 import walletModule, { WalletState, WalletToConnect } from "./modules/wallet/walletModule";
 import audioEditorModule, { AudioEditorState } from "@audioeditor/store/modules/audioEditorModule";
 import web3authModule, { Web3AuthState } from "./modules/web3auth/web3authModule";
-// import { computeIsNecessaryToEnableWeb3Auth, loginToWeb3AuthWithRaceConditionGuard } from "./storeFunctions";
 import { BlockchainIdentifiers, WalletIdentifiers } from "@/data/wallet/walletServiceConstants";
 import routerPaths from "@/data/router/path/routerPaths.json";
 import router from "@/router";
@@ -30,12 +28,6 @@ export interface State {
 }
 export type Context = ActionContext<State, State>;
 
-//WARNING: VuexPersistence does not work with Map (even in modules that are not stored via this plugin). It breaks work of AudioEditor module. Be careful! https://github.com/robinvdvleuten/vuex-persistedstate/issues/210
-// const vuexCacheCookie = new VuexPersistence({ //TODO: disable localstorage use
-//   storage: window.sessionStorage,
-//   modules: [storeModules.DATA],
-// });
-
 const initialStoreModules = {
   user: userModule,
   application: applicationModule,
@@ -51,17 +43,12 @@ const initialStoreModules = {
 function fillModulesStatesWithInitialValues(context: Context) {
   _.forOwn(initialStoreModules, (value, key) => {
     const stateModule = typeof value.state === "function" ? value.state() : value.state;
-    // TODO fix
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
     context.state[key] = _.cloneDeep(stateModule);
   });
 }
 
 const store = createStore<State>({
   modules: _.cloneDeep(initialStoreModules),
-  //WARNING: VuexPersistence does not work with Map (even in modules that are not stored via this plugin). It breaks work of AudioEditor module. Be careful! https://github.com/robinvdvleuten/vuex-persistedstate/issues/210
-  // plugins: [vuexCacheCookie.plugin],
   actions: {
     /* public actions */
     async initializeState(context: Context) {
@@ -105,17 +92,6 @@ const store = createStore<State>({
     async onUserObtainedFromBackend(context: Context) {
       context.dispatch("wallet/loadWalletsFromBackend");
     },
-    // async onWalletsLoadedFromBackend(context: Context) {
-    //   // const hasUserMetamaskWallet = Boolean(context.rootGetters["wallet/hasWallets"]); //TODO: Web3Auth has been to activated only if already has Web3Auth wallet or does not have Web3Auth wallet but has metamask wallet. Need to use instead: hasWeb3AuthWallet || !hasMetamaskWallet
-
-    //   const isNecessaryToEnableWeb3Auth = computeIsNecessaryToEnableWeb3Auth(context.state.wallet.userWallets);
-    //   let web3AuthStatus;
-
-    //   if (isNecessaryToEnableWeb3Auth) {
-    //     web3AuthStatus = await context.dispatch("web3auth/initialize");
-    //     await loginToWeb3AuthWithRaceConditionGuard(context, this.watch.bind(this), web3AuthStatus);
-    //   }
-    // },
     async onWeb3AuthLoggedIn(context: Context) {
       console.log("onWeb3AuthLoggedIn: start");
       const payload: WalletToConnect = {

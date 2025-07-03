@@ -2,8 +2,6 @@ import { Themes, type Theme } from "@/utils/types/themes.types";
 import type { ActionContext } from "vuex";
 import type { State } from "@/store/store";
 import applicationMutations from "@/data/store/application/applicationMutations.json";
-
-// type FlowFlags = "SignUp"
 export const signUpValues = { AFTER_SIGNUP: "AFTER_SIGNUP" };
 export interface ApplicationState {
   isLoading: boolean; //TODO: rename to isLoadingOverlayVisible

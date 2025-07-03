@@ -12,7 +12,6 @@ NProgress.configure({ minimum: 0.1, showSpinner: false });
 const authRoutes = [
   {
     path: routerPaths.START_PAGE,
-    // props: true,
     name: RouteNames.STARTPAGE,
     component: () => import("@/pages/startpage/LandingPage.vue"),
     meta: {
@@ -25,42 +24,8 @@ const authRoutes = [
     component: () => import("@/pages/newAuth/Authorization.vue"),
     meta: {
       layout: AppLayouts.AUTH,
-      // accessScopes: [AccessScopes.ARTIST_CREATE],
     },
   },
-  // {
-  //   path: routerPaths.LOGIN,
-  //   name: RouteNames.LOGIN,
-  //   component: () => import("@/pages/auth/LoginPage.vue"),
-  //   meta: {
-  //     layout: AppLayouts.AUTH,
-  //   },
-  // },
-  // {
-  //   path: routerPaths.LOGIN_GOOGLE_CALLBACK,
-  //   name: RouteNames.LOGIN_GOOGLE_CALLBACK,
-  //   component: () => import("@/pages/auth/LoginGoogleCallbackPage.vue"),
-  //   meta: {
-  //     layout: AppLayouts.AUTH,
-  //   },
-  // },
-  // {
-  //   path: routerPaths.LOGIN_COGNITO_CALLBACK,
-  //   name: RouteNames.LOGIN_COGNITO_CALLBACK,
-  //   // component: () => import("@/pages/auth/LoginCognitoCallbackPage.vue"), //TODO: remove after integrate Amplify
-  //   component: () => import("@/pages/auth/LoginCognitoAmplifyCallbackPage.vue"),
-  //   meta: {
-  //     layout: AppLayouts.AUTH,
-  //   },
-  // },
-  // {
-  //   path: routerPaths.SIGNUP,
-  //   name: RouteNames.SIGN_UP,
-  //   component: () => import("@/pages/auth/SignupPage.vue"),
-  //   meta: {
-  //     layout: AppLayouts.AUTH,
-  //   },
-  // },
 ];
 
 const JGOIDCRoutes = [
@@ -103,12 +68,10 @@ const artistRoutes = [
       layout: AppLayouts.DEFAULT,
       AccessScopes: [AccessScopes.LOGGED_IN],
     },
-    // redirect: "/studio",
   },
   {
     path: routerPaths.ARTIST_ID,
     name: RouteNames.ARTIST,
-    // props: true,
     component: () => import("@/pages/artist/ArtistPage.vue"),
     meta: {
       layout: AppLayouts.DEFAULT,
@@ -118,7 +81,6 @@ const artistRoutes = [
   {
     path: routerPaths.ARTIST_NEW,
     name: RouteNames.SETTINGS_ARTIST,
-    // props: true,
     component: () => import("@/pages/artist/SettingsArtistPage.vue"),
     meta: {
       layout: AppLayouts.DEFAULT,
@@ -128,7 +90,6 @@ const artistRoutes = [
   {
     path: routerPaths.ARTIST_EDIT_ID,
     name: RouteNames.SETTINGS_ARTIST_EDIT,
-    // props: true,
     component: () => import("@/pages/artist/SettingsArtistPage.vue"),
     meta: {
       layout: AppLayouts.DEFAULT,
@@ -138,7 +99,6 @@ const artistRoutes = [
   {
     path: routerPaths.PROFILE_PAGE_EDIT,
     name: RouteNames.SETTINGS_CREATOR,
-    // props: true,
     component: () => import("@/pages/user/SettingsUserPage.vue"),
     meta: {
       layout: AppLayouts.DEFAULT,
@@ -272,7 +232,6 @@ const testRoutes = [
     component: () => import("@/pages/test/TestPage.vue"),
     meta: {
       layout: AppLayouts.DEFAULT,
-      // accessScopes: [AccessScopes.ARTIST_CREATE],
     },
   },
 ];
@@ -283,7 +242,6 @@ const router = createRouter({
 });
 
 router.beforeResolve((to, from, next) => {
-  // If this isn't an initial page load.
   if (to.name) {
     NProgress.start();
   }
