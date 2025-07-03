@@ -1,0 +1,6 @@
+{
+    "TYPE_USER_APPROVE": "userForApprove",
+    "TYPE_USER": "user",
+    "TYPE_ARTIST_APPROVE": "artist",
+    "TYPE_MEMBER": "member"
+}

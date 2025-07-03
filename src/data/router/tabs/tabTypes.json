@@ -1,0 +1,8 @@
+{
+    "ARTISTS": "artists",
+    "TEAM": "team",
+    "FAVORITES": "favorites",
+    "SUBSCRIPTIONS": "subscriptions",
+    "ADMIN_PANEL": "adminPanel",
+    "MEMBER_MODAL": "memberModal"
+}

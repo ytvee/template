@@ -1,0 +1,1 @@
+/* Methods which belong either to controller and presenter */

@@ -1,0 +1,31 @@
+{
+    "pages": [
+        {
+            "name": "aiChat",
+            "iconPath": "/assets/navbar/musicChat.svg",
+            "route": "AICHAT"
+        },
+        {
+            "name": "SOUND_SPLITTER",
+            "iconPath": "/assets/navbar/studio.svg",
+            "route": "SOUND_SPLITTER"
+        }
+    ],
+    "buttons": [
+        {
+            "name": "logout",
+            "iconPath": "/assets/navbar/logout.svg",
+            "link": "LOGIN"
+        },
+        {
+            "name": "circle",
+            "iconPath": "/assets/navbar/circle.svg",
+            "link": "https://www.google.com/"
+        },
+        {
+            "name": "settings",
+            "iconPath": "/assets/navbar/settings.svg",
+            "link": "SOUND_SPLITTER"
+        }
+    ]
+}

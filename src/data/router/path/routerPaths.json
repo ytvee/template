@@ -1,0 +1,10 @@
+{
+  "SIGNUP": "/signup",
+  "HOME": "/",
+  "ACCESS_ERROR": "/access-error",
+  "NOT_FOUND": "/not-found",
+  "PATH_MATCH": "/:pathMatch(.*)*",
+  "SOUND_SPLITTER": "/studio",
+  "AICHAT": "/aichat",
+  "NEW_AUTHORIZATION": "/new-authorization"
+}

@@ -1,0 +1,6 @@
+{
+    "SET_SELECTED_THEME": "setSelectedTheme",
+    "SET_IS_LOADING":"setIsLoading",
+    "SET_FLAG": "setFlag",
+    "SET_ACTIVE_PAGE": "setActivePage"
+}

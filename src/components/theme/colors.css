@@ -1,0 +1,113 @@
+:root {
+    /* ==================== */
+    /* COLORS */
+    /* ==================== */
+
+    /* Base Colors */
+    --color-orange: #f29e1d;
+    --color-error: #de3838;
+    --color-success: #52BB4D;
+    --color-dark: #1d2227;
+    --color-light: #ffffff;
+    --color-gray: #d9d9d9;
+    --color-gray-light: #AAA;
+    --color-gray-medium: #676767;
+    --color-gray-dark: #373737;
+
+    /* Accent Colors */
+    --color-accent-primary: #c2e568;
+    --color-accent-secondary: #74de6f;
+
+    /* Password Strength Indicators */
+    --password-strength-inactive: #676767;
+    --password-strength-weak: var(--color-error);
+    --password-strength-medium: #f0da63;
+    --password-strength-strong: #c2e568;
+
+    /* Transparent Colors */
+    --transparent-dark-10: rgba(0, 0, 0, 0.1);
+    --transparent-dark-12: rgba(0, 0, 0, 0.12);
+    --transparent-dark-55: rgba(0, 0, 0, 0.55);
+    --transparent-dark-70: rgba(0, 0, 0, 0.7);
+    --transparent-dark-80: rgba(0, 0, 0, 0.8);
+    --transparent-dark-90: rgba(0, 0, 0, 0.9);
+
+    --transparent-light-02: rgba(255, 255, 255, 0.02);
+    --transparent-light-05: rgba(255, 255, 255, 0.05);
+    --transparent-light-07: rgba(255, 255, 255, 0.07);
+    --transparent-light-10: rgba(255, 255, 255, 0.1);
+    --transparent-light-149: rgba(255, 255, 255, 0.149);
+    --transparent-light-15: rgba(255, 255, 255, 0.15);
+    --transparent-light-17: rgba(255, 255, 255, 0.17);
+    --transparent-light-20: rgba(255, 255, 255, 0.2);
+    --transparent-light-23: rgba(255, 255, 255, 0.23);
+    --transparent-light-38: rgba(255, 255, 255, 0.38);
+    --transparent-light-40: rgba(255, 255, 255, 0.4);
+    --transparent-light-50: rgba(255, 255, 255, 0.5);
+    --transparent-light-60: rgba(255, 255, 255, 0.6);
+
+    --transparent-accent-08: rgba(205, 231, 104, 0.08);
+    --transparent-accent-10: rgba(205, 231, 104, 0.1);
+    --transparent-accent-20: rgba(205, 231, 104, 0.2);
+    --transparent-accent-25: rgba(205, 231, 104, 0.25);
+    --transparent-accent-30: rgba(205, 231, 104, 0.3);
+    --transparent-accent-50: rgba(194, 229, 104, 0.5);
+
+    /* Special Colors */
+    --color-wallet: #1e1e1e;
+    --color-loader-bg: var(--transparent-dark-70);
+    --color-profile-bg: var(--color-gray-dark);
+    --color-nav-selected: var(--transparent-light-15);
+    --shadow-accent: 0 1px 2px var(--transparent-accent-20);
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(99.76deg, #74de6f -8.41%, #cde768 84.02%);
+    --gradient-primary-1: linear-gradient(270deg, #74de6f -8.41%, #cde768 84.02%);
+    --gradient-gradient-primary-1: linear-gradient(99.76deg, #71d66c -8.41%, #c1d962 84.02%);
+    --gradient-primary-light: linear-gradient(99.76deg, rgba(116, 222, 111, 0.6) 0%, rgba(205, 231, 104, 0.6) 100%);
+    --gradient-primary-light-1: linear-gradient(90deg, rgba(116, 222, 111, 0.6) 0%, rgba(205, 231, 104, 0.6) 100%);
+    --gradient-primary-transparent: linear-gradient(99.76deg, rgba(116, 222, 111, 0.3) -8.41%, rgba(205, 231, 104, 0.3) 84.02%);
+    --gradient-primary-transparent-1: linear-gradient(180deg, rgba(82, 187, 77, 0) 39.09%, rgba(82, 187, 77, 0.25) 100%);
+
+    --gradient-danger: linear-gradient(99.76deg, #bd3232 1.11%, #b88607 96.91%);
+    --gradient-warning: linear-gradient(96.91deg, #fa9393 10.58%, #f8d782 58.74%, #fbcc95 96.19%);
+    --gradient-purple: linear-gradient(99.76deg, #68e78b 14.56%, #cf6fde 99.15%);
+    --gradient-blue: linear-gradient(99.76deg, #fff9f8 -8.41%, #7a95da 84.02%);
+    --gradient-blue-red: linear-gradient(263.86deg, #ff2525 -6.86%, #1f5eff 105.56%);
+    --gradient-green-light: linear-gradient(263.86deg, #25ff55 -6.86%, #ffffff 105.56%);
+    --gradient-dark-green: linear-gradient(180deg, rgba(82, 187, 77, 0.06) 0%, rgba(82, 187, 77, 0) 72.46%),
+    linear-gradient(180deg, rgba(82, 187, 77, 0.06) 0%, rgba(82, 187, 77, 0) 31.76%),
+    linear-gradient(180.47deg, rgba(251, 251, 251, 0.03) 1.1%, rgba(255, 255, 255, 0) 77.2%),
+    rgba(255, 255, 255, 0.07);
+    --gradient-dark-to-light-solid: linear-gradient(0deg, #1d2227, #1d2227), #ffffff;
+    --gradient-light-to-dark: linear-gradient(171deg, rgba(109, 109, 109, 0.7) 0%, rgba(29, 34, 39, 0.7) 87.5%);
+    --gradient-light-to-dark-4-steps: linear-gradient(0deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), linear-gradient(180deg, rgba(255, 255, 255, 0.14) 0%, rgba(255, 255, 255, 0) 100%);
+    --gradient-light-to-dark-3-steps: linear-gradient(0deg, rgba(55, 55, 55, 1) 0%, rgba(55, 55, 55, 0.9780287114845938) 26%, rgba(55, 55, 55, 0) 100%);
+    --gradient-dark-to-light-transparent: linear-gradient(0deg, #373737, #373737), linear-gradient(0deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.07)), linear-gradient(180.47deg, rgba(251, 251, 251, 0.03) 1.1%, rgba(255, 255, 255, 0) 77.2%), linear-gradient(165.99deg, rgba(82, 187, 77, 0.06) 3.84%, rgba(82, 187, 77, 0) 69.97%), linear-gradient(180deg, #373c36 0%, #2e2e2e 100%);
+    --gradient-transparent-to-dark: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75));
+    --gradient-dark-to-transparent: linear-gradient(180deg, rgba(0, 0, 0, 0.8), rgba(255, 255, 255, 0));
+
+    /* Card Backgrounds */
+    --gradient-card-dark: linear-gradient(180deg, rgba(109, 109, 109, 0.7) 0%, rgba(29, 34, 39, 0.7) 100%);
+    --gradient-card-success: var(--gradient-dark-green);
+
+    /* DeepNoise colors */
+    --ui-accent-bg: #36ABBB;
+    --ui-accent-hover-bg: #43d2e5;
+    --ui-highlight-bg: rgba(255, 255, 255, 0.1);
+    --ui-alert-text: #F27B7C;
+    --ui-fg-light: rgba(255, 255, 255, 0.07);
+    --ui-fg-very-light: rgba(255, 255, 255, 0.14);
+
+    /* Authorization Backgrounds */
+    --gradient-authorization: linear-gradient(to bottom right, #1C1C1C, #2D2D2D);
+    --authorization-panel-gradient: linear-gradient(to bottom right, rgba(0,0,0,0.07), rgba(255,255,255,0.07)),
+
+    /* UI Gradients */
+    --gradient-ui-light: linear-gradient(180deg, rgba(255, 255, 255, 0.07) 0%, rgba(255, 255, 255, 0) 100%),
+    linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15));
+
+    /* Overlay Gradients */
+    --gradient-overlay-dark: linear-gradient(180deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.7) 60%, rgba(0, 0, 0, 0) 100%);
+    --gradient-overlay-light: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.14) 100%);
+}

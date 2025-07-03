@@ -1,0 +1,35 @@
+:root {
+    /* ==================== */
+    /* TYPOGRAPHY */
+    /* ==================== */
+
+    --app-letter-spacing: 0.05em;
+    /* FONT FAMILIES */
+    --main-font-family: "Montserrat", sans-serif;
+    --wix-font-family: "Wix Madefor Text", sans-serif;
+    /* TEXT CONFIGURATION */
+    --smallest-font-size: 10px;
+    --small-font-size: 12px;
+    --regular-font-size: 14px;
+    --medium-font-size: 16px;
+    --medium-font-size-2: 18px;
+    --medium-font-size-3: 20px;
+    --large-font-size: 22px;
+    --very-large-font-size: 24px;
+    --logo-font-size: calc(17px + 5 * (100vw / 1980));
+    /* WEIGHT CONFIGURATION */
+    --small-font-weight: 400;
+    --regular-font-weight: 500;
+    --medium-font-weight: 500;
+    --large-font-weight: 600;
+    --largest-font-weight: 700;
+    /* HEADERS CONFIGURATION */
+    --h1-font-size: 80px;
+    --h2-font-size: 34px;
+    --h3-font-size: 24px;
+    --h4-font-size: 18px;
+    --h1-font-weight: var(--large-font-weight);
+    --h2-font-weight: var(--large-font-weight);
+    --h3-font-weight: var(--large-font-weight);
+    --h4-font-weight: var(--large-font-weight);
+}

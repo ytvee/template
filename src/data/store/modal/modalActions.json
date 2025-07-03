@@ -1,0 +1,7 @@
+{
+    "SET_IS_MODAL_NON_CLOSABLE_BY_CLICK_ON_PERIPHERY": "setIsModalNonClosableByClickOnPeriphery",
+    "SET_MODAL_VISIBILITY": "setModalVisibility",    
+    "SET_MODAL": "setModal",
+    "OPEN_MODAL": "openModal",
+    "CLOSE_MODAL": "closeModal"
+}

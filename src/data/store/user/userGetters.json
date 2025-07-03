@@ -1,0 +1,13 @@
+{
+    "GET_IS_LOGGED_IN": "getIsLoggedIn",
+    "GET_CURRENT_USER_NAME": "getCurrentUserName",
+    "GET_CURRENT_USER_PREVIEW_IMAGE": "getCurrentUserPreviewImage",
+    "GET_CURRENT_USER_TEAM": "getCurrentUserTeam",
+    "GET_CURRENT_USER_BIO_INFORMATION": "getCurrentUserBioInformation",
+    "GET_CURRENT_USER_ROLES": "getCurrentUserRoles",
+    "HAS_ROLE": "hasRole",
+    "GET_IS_NEED_FINAL_SIGN_UP": "getIsNeedFinalSignUp",
+    "GET_FINAL_SIGN_UP_STEPS": "getFinalSignUpSteps"
+}
+
+

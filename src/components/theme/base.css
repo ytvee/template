@@ -1,0 +1,10 @@
+:root {
+    /* ==================== */
+    /* BASE STYLES */
+    /* ==================== */
+
+    /* todo: need to refactor */
+
+    --size-of-scrollbar: 5px;
+    --default-transition: 0.25s;
+}

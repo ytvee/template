@@ -1,0 +1,17 @@
+[
+  {
+    "categoryName": "Artists",
+    "categoryUrl": "/artists",
+    "rolesWithAccess": ["USER", "CREATOR", "ADMIN", "CREATOR_UNCONFIRMED", "FAN"]
+  },
+  {
+    "categoryName": "My teams",
+    "categoryUrl": "/myteams",
+    "rolesWithAccess": ["CREATOR"]
+  },
+  {
+    "categoryName": "Admin page",
+    "categoryUrl": "/adminPanel",
+    "rolesWithAccess": ["ADMIN"]
+  }
+]

@@ -1,0 +1,12 @@
+[
+  {
+    "id": "solo",
+    "value": "solo",
+    "label": "solo"
+  },
+  {
+    "id": "band",
+    "value": "band",
+    "label":"band"
+  }
+]

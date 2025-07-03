@@ -1,0 +1,8 @@
+{
+    "USER": "user",
+    "MODAL": "modal",
+    "APPLICATION": "application",
+    "NOTIFICATIONS":"notifications",
+    "DATA": "data",
+    "WALLET": "wallet"
+}  

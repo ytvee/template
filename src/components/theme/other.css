@@ -1,0 +1,89 @@
+:root {
+    /* todo: need to refactor */
+
+    /* OTHER STYLES */
+    --navbar-height: 75px;
+    --content-width: 1400px;
+    --logo-img-max-width: 70px;
+    --logo-text-size: 25px;
+    --profile-icon-width: 44px;
+    --navbar-dropdown-item-icon-width: var(--profile-icon-width);
+
+    --file-input-border-width: 0.125rem;
+    /*--file-input-border-radius: 0.3125rem;*/
+    /* LANDING PAGE */
+    --landing-h1: 3.75rem;
+    --statistics-font-family: "Neue Machina", sans-serif;
+    /*--statistics-font-weight: 400;*/
+    --statistics-value-font-size: 2.125rem;
+    --statistics-label-font-size: 1.625rem;
+    --landing-button-min-width: 13.75rem;
+
+    /*Auth forms */
+    --width-auth-form: 365px;
+
+    /* TrackCard */
+    --track-card-border-radius: var(--regular-border-radius);
+    --track-card-header-font-size: 1.375rem;
+    --track-card-statistics-pane-blur-background: rgba(145, 145, 145, 0.4);
+
+    /* PreviewCardForCreator */
+    --preview-card-for-creater-column-gap: 50px;
+    --preview-card-for-creater-border-radius: 0.625rem;
+
+    /* Forum */
+    --forum-post-content-font-size: 1rem;
+    /*--forum-post-content-font-weight: 500;*/
+
+    --forum-post-statistics-pane-border-radius: 0.625rem;
+    --forum-overlay-background-color: rgba(255, 255, 255, 0.1);
+
+    --forum-quote-content-font-size: 1rem;
+    --forum-op-post-bordered-area-border-radius: 0.625rem;
+
+    --audio-editor-font-label-main: "Wix Madefor Text", sans-serif;
+    --audio-editor-frame-border-radius: 16px;
+    --audio-editor-color-white: var(--color-light);
+    --audio-editor-color-white-opacity-40: #ffffff66;
+    --audio-editor-font-weight-bold: 600;
+
+
+
+
+
+
+    --front-container-height: 44px;
+    /* todo: rename --chat-font-family to ai-chat-font-family */
+    --chat-font-family: "Wix Madefor Text", sans-serif;
+    --ai-chat-font-family: var(--wix-font-family);
+    --modal-z-index: 100;
+
+    --switch-panel-width: 348px;
+    --switch-panel-background-color: rgb(42, 46, 42);
+
+    --chat-background-gradient: linear-gradient(0deg, #373737, #373737),
+    linear-gradient(0deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.07)),
+    linear-gradient(180.47deg, rgba(251, 251, 251, 0.03) 1.1%, rgba(255, 255, 255, 0) 77.2%),
+    linear-gradient(165.99deg, rgba(82, 187, 77, 0.06) 3.84%, rgba(82, 187, 77, 0) 69.97%),
+    linear-gradient(180deg, #373C36 0%, #2E2E2E 100%);
+    --chat-header-background-color: rgba(217, 217, 217, 0.102);
+    --chat-attached-files-background-color: rgba(42, 46, 42, 1);
+    /* todo: rename valiables */
+    --chat-message-background-color-1: rgba(0, 0, 0, 0.2);
+    --ai-chat-background-color-0: var(--transparent-light-10);
+    --ai-chat-background-color-2: rgba(0, 0, 0, 0.4);
+    --upload-button-background-color: rgba(82, 187, 77, 0.6);
+    --upload-button-background-color-2: rgba(82, 187, 77, 0.8);
+    --date-text-color: rgba(224, 209, 235, 0.62);
+    --message-text-color: rgb(223, 215, 228);
+
+    --ai-chat-color-white: var(--audio-editor-color-white);
+
+    --ai-chat-button-background-color-1: #C4C4C4;
+    --delete-button-color: #ff5150;
+
+    --chat-font-size-button-tip: 12px;
+    --chat-font-size-text: 14px;
+    --chat-font-weight-text: 400;
+    --chat-font-weight-text-2: 600;
+}

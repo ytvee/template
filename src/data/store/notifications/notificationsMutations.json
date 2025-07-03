@@ -1,0 +1,5 @@
+{
+    "SET_NOTIFICATIONS": "setNotifications",
+    "DELETE_NOTIFICATION": "deleteNotification",
+    "ADD_NOTIFICATION":"addNotification"
+}

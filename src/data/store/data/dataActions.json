@@ -1,0 +1,6 @@
+{
+    "CACHE_ARTIST": "setArtist",
+    "CACHE_ARTISTS": "setArtists",
+    "CACHE_FAVORITES": "setFavorites",
+    "CACHE_SUBSCRIPTIONS": "setSubscriptions"
+}

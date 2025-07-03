@@ -1,0 +1,8 @@
+{
+    "SEND_FILE_TO_SPLIT": "/development/v1/soundsplitter",
+    "UPLOAD_AUDIO_SAMPLE": "/development/v1/studio/upload_audio_sample",
+    "UPLOAD_PROJECT_METADATA": "/development/v1/studio/upload_project_metadata",
+    "DOWNLOAD_PROJECT": "/development/v1/studio/download_project",
+    "GET_PROJECTS": "/development/v1/studio/list_projects",
+    "UPDATE_PROJECT_NAME": "/development/v1/studio/project/update_name"
+}

@@ -1,0 +1,23 @@
+# default
+.git/
+node_modules/
+*/node_modules/
+package-lock.json
+yarn.lock
+*/package-lock.json
+
+# interface
+dist/
+
+# server
+server/prisma/migrations/
+server/prisma/*.db
+server/prisma/*.db-journal
+
+# IDE
+.idea/
+.vscode/
+run.bat
+
+.env
+*~

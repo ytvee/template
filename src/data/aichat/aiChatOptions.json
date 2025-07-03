@@ -1,0 +1,85 @@
+{
+  "swing": [
+    {
+      "id": 0,
+      "label": "No Swing"
+    },
+    {
+      "id": 1,
+      "label": "Medium Swing"
+    },
+    {
+      "id": 2,
+      "label": "Hard Swing"
+    }
+  ],
+  "instruments": [
+    [
+      "Kick",
+      "Snare",
+      "Clap",
+      "Toms"
+    ],
+    [
+      "Closed Hat",
+      "Open Hat",
+      "Ride",
+      "Crash"
+    ],
+    [
+      "Shaker",
+      "Tambourine",
+      "Cowbell",
+      "Maracas",
+      "Claves",
+      "Castanets"
+    ],
+    [
+      "Bongos",
+      "Congas",
+      "Timbale",
+      "Cuica",
+      "Triangles",
+      "Sticks"
+    ]
+  ],
+  "genres": [
+    [
+      "Pop",
+      "Hip Hop",
+      "Latin",
+      "R&B",
+      "Reggaeton",
+      "Reggae"
+    ],
+    [
+      "Trap",
+      "Techno",
+      "House",
+      "Dubstep",
+      "Drum and Bass",
+      "Future Bass"
+    ],
+    [
+      "Nu Disco",
+      "Minimalistic",
+      "Psytrance",
+      "Chillstep",
+      "Synthwave",
+      "Ambient & Downtempo"
+    ],
+    [
+      "Cinematic",
+      "New Age",
+      "Jazz",
+      "Blues",
+      "Funk",
+      "Folk",
+      "Metal"
+    ]
+  ],
+  "sampleTypes": [
+    { "label": "One-shot" },
+    { "label": "Loop" }
+  ]
+}

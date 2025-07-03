@@ -1,0 +1,37 @@
+[
+  {
+    "id": 0,
+    "label": "Drums",
+    "color": "#F29E1D",
+    "backgroundColor": "#F29E1D33",
+    "iconPath": "/assets/modal/instruments/drums.svg"
+  },
+  {
+    "id": 1,
+    "label": "Bass",
+    "color": "#52BB4D",
+    "backgroundColor": "#52BB4D33",
+    "iconPath": "/assets/modal/instruments/bass.svg"
+  },
+  {
+    "id": 2,
+    "label": "Synth",
+    "color": "#0082E8",
+    "backgroundColor": "#0082E833",
+    "iconPath": "/assets/modal/instruments/synth.svg"
+  },
+  {
+    "id": 3,
+    "label": "Keys",
+    "color": "#9932D0",
+    "backgroundColor": "#9932D033",
+    "iconPath": "/assets/modal/instruments/keys.svg"
+  },
+  {
+    "id": 4,
+    "label": "FX",
+    "color": "#0FD6CA",
+    "backgroundColor": "#09FFB533",
+    "iconPath": "/assets/modal/instruments/fx.svg"
+  }
+]

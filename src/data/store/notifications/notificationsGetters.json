@@ -1,0 +1,4 @@
+{
+    "GET_NOTIFICATIONS": "getNotifications",
+    "GET_NOTIFICATIONS_COUNT": "getNotificationsCount"
+}

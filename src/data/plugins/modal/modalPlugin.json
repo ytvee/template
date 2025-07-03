@@ -1,0 +1,4 @@
+{
+    "MODAL_SET_MODAL": "modal/setModal",
+    "MODAL_SET_MODAL_VISIBILITY": "modal/setModalVisibility"
+}

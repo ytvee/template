@@ -1,0 +1,6 @@
+{
+    "IS_ARTIST_CACHED": "isArtistCached",
+    "IS_ARTISTS_CACHED":"isArtistsCached",
+    "IS_FAVORITES_CACHED": "isFavoritesCached",
+    "IS_SUBSCRIPTIONS_CACHED": "isSubscriptionsCached"
+}

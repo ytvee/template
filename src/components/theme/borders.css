@@ -1,0 +1,18 @@
+:root {
+    /* ==================== */
+    /* SIZES & BORDERS */
+    /* ==================== */
+
+    --thin-border-width: 2px;
+
+    --small-border-radius: 5px;
+    --regular-border-radius: 10px;
+    --medium-border-radius: 15px;
+    --medium-border-radius-2: 16px;
+    --large-border-radius: 20px;
+    --large-border-radius-2: 22px;
+    --border-raduis-circle: 50%;
+    --border-radius-50: 50px;
+
+    --input-height: 45px;
+}

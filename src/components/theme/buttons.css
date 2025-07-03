@@ -1,0 +1,24 @@
+:root {
+    /* ==================== */
+    /* BUTTONS */
+    /* ==================== */
+
+    /* BUTTONS CONFIGURATION */
+    /* todo: need to refactor */
+    --button-font-size: 20px;
+    /*--button-font-weight: 600;*/
+    --button-height-small: 35px;
+    --button-height-medium: 40px;
+    --button-height-large: 50px;
+    --button-border-radius: var(--small-border-radius);
+    --button-padding-small: 0 18px;
+    --button-padding-medium: 0 40px;
+    --button-border-width: 2px;
+    /* Profile Buttons */
+    --button-profile-font-size: 18px;
+    /*--button-profile-font-weight: 600;*/
+    --button-profile-height: 40px;
+    --button-profile-border-radius: var(--small-border-radius);
+    --button-profile-padding: 0 25px;
+    --button-profile-border-width: 2px;
+}

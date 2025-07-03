@@ -1,0 +1,12 @@
+{
+    "INITIALIZE_USER": "initialize",
+    "INITIALIZE_VARS": "initializeVars",
+    "SET_IS_LOGGED_IN": "setIsLoggedIn",
+    "SET_IS_NEED_TO_BE_RELOADED": "setIsNeedToBeReloaded",
+    "SET_USER": "setCurrentUser",
+    "SET_CURRENT_USER": "setCurrentUser",
+    "SET_USER_TOKENS": "setUserTokens",
+    "SET_IS_NEED_FINAL_SIGN_UP": "setIsNeedFinalSignUp",
+    "SET_FINAL_SIGN_UP_STEPS": "setFinalSignUpSteps",
+    "SET_IS_AFTER_ARTIST_CREATION": "setIsAfterArtistCreation"
+}

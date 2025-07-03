@@ -1,0 +1,4 @@
+{
+    "USER_SET_IS_LOGGED_IN": "user/setIsLoggedIn",
+    "INITIALISE_VARS": "user/initialiseVars"
+}

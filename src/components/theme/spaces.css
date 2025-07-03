@@ -1,0 +1,24 @@
+:root {
+    /* ==================== */
+    /* INDENTS & SPACES */
+    /* ==================== */
+
+    /* GAP */
+    --smallest-block-gap: 5px;
+    --small-block-gap: 8px;
+    --regular-block-gap: 10px;
+    --regular-2-block-gap: 12px;
+    --medium-block-gap: 16px;
+    --large-block-gap: 20px;
+    /* MARGIN */
+    --margin-zero-auto: 0 auto;
+    /* PADDING */
+    --padding-button-1: 0 7.5px;
+    --default-padding: 10px;
+    --small-padding: 12px;
+    --regular-padding: 15px;
+    --large-padding: 20px;
+
+    --input-padding: 0 16px;
+    --textarea-padding: 8px 8px 8px 16px;
+}
