@@ -1,0 +1,6 @@
+{
+    "GENERATE_NONCE_FOR_MESSAGE": "/development/v1/wallet/nonce",
+    "ADD_WALLET": "/development/v1/wallet",
+    "GET_USER_WALLETS": "/development/v1/wallets",
+    "DELETE_WALLET": "/development/v1/wallet"
+}

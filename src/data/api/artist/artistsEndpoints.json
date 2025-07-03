@@ -1,0 +1,14 @@
+{
+    "ARTISTS": "/development/v1/artists",
+    "ARTIST":  "/development/v1/artist",
+    "ADD_TO_FAVORITES": "/development/v1/artist/like",
+    "ADD_TO_SUBSCRIPTIONS": "/development/v1/user/subscribe",
+    "FAVORITES": "/development/v1/user/favourites",
+    "SUBSCRIPTIONS": "/development/v1/user/subscriptions",
+    "GET_ARTISTS_WHERE_USER_IS_MEMBER": "/development/v1/artists/membership",
+    "CREATE_ARTIST": "/development/v1/artist/create",
+    "ARTISTS_BY_TYPE_SOLO": "/development/v1/artists?type=solo&query=",
+    "ARTISTS_BY_TYPE_BAND": "/development/v1/artists?type=band&query=",
+    "EDIT_ARTIST": "/development/v1/artist/?id="
+}
+

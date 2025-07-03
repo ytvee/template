@@ -1,0 +1,29 @@
+{
+    "BASE_ICONS_URI": "https://jam-galaxy.s3.amazonaws.com/links/",
+    "LINK_ICONS": {
+        "web": {
+        "regexes": [],
+        "iconUrl": "link.svg"
+        },
+        "twitter": {
+        "regexes": [".*twitter.*", ".*t.co/.*"],
+        "iconUrl": "twitter.svg"
+        },
+        "instagram": {
+        "regexes": [".*instagram.*"],
+        "iconUrl": "instagram.svg"
+        },
+        "telegram": {
+        "regexes": [".*telegram.*", ".*t.me/.*"],
+        "iconUrl": "telegram.svg"
+        },
+        "spotify": {
+            "regexes": [".*spotify.*"],
+            "iconUrl": "spotify.svg"
+        },
+        "google": {
+            "regexes": [".*google.*"],
+            "iconUrl": "google.svg"
+        }
+    }
+}

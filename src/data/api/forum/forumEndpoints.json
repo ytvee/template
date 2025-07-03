@@ -1,0 +1,16 @@
+{
+  "CREATE_TOPIC": "/development/v1/forum/topic/create",
+  "EDIT_TOPIC": "/development/v1/forum/topic/edit",
+  "DELETE_TOPIC": "/development/v1/forum/topic/delete",
+  "GET_MESSAGE": "/development/v1/forum/post",
+  "CREATE_MESSAGE": "/development/v1/forum/message/create",
+  "EDIT_MESSAGE": "/development/v1/forum/message/edit",
+  "DELETE_MESSAGE": "/development/v1/forum/message/delete",
+  "LIKE_MESSAGE": "/development/v1/forum/post/like",
+  "UNLIKE_MESSAGE": "/development/v1/forum/post/unlike",
+  "GET_CATEGORY": "/development/v1/forum/category",
+  "GET_LIST_OF_CATEGORY_TOPICS": "/development/v1/forum/topics",
+  "GET_TOPIC": "/development/v1/forum/topic",
+  "UPDATE_TOPIC_STATUS": "/development/v1/forum/topic/status/update",
+  "ATTACH_FILES_TO_POST": "/development/v1/forum/post/files"
+}

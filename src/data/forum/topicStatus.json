@@ -1,0 +1,7 @@
+{
+  "PINNED": "pinned",
+  "CLOSE": "close",
+  "PINNED_GLOBALLY": "pinned_globally",
+  "ARCHIVED": "archived",
+  "VISIBLE": "visible"
+}

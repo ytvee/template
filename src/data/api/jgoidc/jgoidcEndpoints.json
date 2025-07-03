@@ -1,0 +1,4 @@
+{
+    "VALIDATE_SIGNATURE_AND_GET_CODE_FROM_JG_METAMASK_OIDC": "/development/v1/validate_signature",
+    "GET_JG_TWITTER_OIDC_CODE": "/development/v1/provider_code"
+}
