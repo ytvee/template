@@ -118,3 +118,15 @@ npm run build
 ```bash
 npm run lint
 ```
+
+### 8. Storybook
+
+Run the component library in Storybook:
+
+```bash
+npm run storybook
+```
+
+Add new stories alongside components using the `*.stories.tsx` pattern. See
+`src/packages/ui/atoms/ExampleButton/ExampleButton.stories.tsx` for a minimal
+example.
